@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bruh</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6521366d1c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-light bg-light navbar-expand-sm">
+    <div class="container d-flex flex-row justify-content-around" id="headerMainContainer">
+        <div id="menuButton" style="display: none" onclick="openSideNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo.svg" width="40" height="40" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavMain">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">О школе</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#chip">Особенности</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#test">Тестовое задание</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#programm">Программа</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#faq">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <button id="navbarReg" class="btn btn-primary" data-toggle="modal" data-target="#registrationModal">
+            Зарегистрироваться</button>
+    </div>
+</nav>
+
+    <div id="mySidenav" class="sidenav d-flex flex-row">
+        <div class="sidenavLinks d-flex flex-column" id="sideNavLinks">
+            <a class="sideLink navbar-brand" href="#">
+                <img src="../img/logo.svg" width="40" height="40" alt="">
+            </a>
+            <a class="sideLink" href="#about">О школе</a>
+            <span class="lowSpan"></span>
+            <a class="sideLink" href="#staff">Преподаватели</a>
+            <span class="lowSpan"></span>
+            <a class="sideLink" href="#programm">Программа</a>
+            <span class="lowSpan"></span>
+            <a class="sideLink" href="#review">Отзывы</a>
+            <span class="lowSpan"></span>
+            <a class="sideLink" href="#footer">Партнеры</a>
+            <span class="lowSpan"></span>
+            <div class="sideNavIcons d-flex flex-row mt-auto p-4 justify-content-around">
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram fa-lg"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a href="https://www.deviantart.com/"><i class="fa fa-deviantart fa-lg"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+            </div>
+        </div>
+        <div class="sidenavExit d-flex flex-column justify-content-center align-items-center" id="sideNavExit"
+            onclick="closeSideNav()">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+        </div>
+    </div>
+
+    <!-- Modal registration window -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex flex-row justify-content-between">
+                    <h5 class="modal-title" id="registrationModalLabel">Регистрация на 1 этап DSS 2021</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="formText">Для регистрации на 1 этап DSS укажите Ваше имя и email</label>
+                            <input type="text" class="form-control" id="InputName" placeholder="Имя">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <button type="button" class="regButton btn btn-primary"
+                                onclick="reg()">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <!-- First page section -->
+        <section>
+            <div class="d-flex flex-row align-items-start justify-content-between" id="fPage">
+                <div class="textHolder1 d-flex flex-column align-items-start">
+                    <p class="firstStage">I этап</p>
+                    <div class="page1DSS d-flex flex-column align-items-start">
+                        <p id="spot">Design Spot</p>
+                        <p>School</p>
+                    </div>
+                    <h3 class="page1Start">Начни путь профессионала в мире UX дизайна</h3>
+                    <p class="desc">
+                        DSS — бесплатная онлайн-школа UX дизайна
+                        от ведущих дизайнеров EPAM
+                    </p>
+                    <button class="page1Btn btn btn-primary" data-toggle="modal" data-target="#registrationModal">
+                        Зарегистрироваться</button>
+                    <div class="triangH d-flex flex-column align-items-center justify-content-center">
+                        <div class="triangleB">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column align-items-start" id="picturePlace">
+                    <img src="../img/wallp.png" class="normal1080" style="max-width: 100%" alt="">
+                </div>
+            </div>
+            <div class="fillSquare" id="sqLeft1">
+            </div>
+            <div class="fillSquare" id="sqRight1">
+            </div>
+            <div class="fillSquare" id="sqRight2">
+            </div>
+        </section>
+
+        <!-- Second page(About) section -->
+        <section id="about">
+            <div class="container">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-row" id="row2">
+                        <div class="d-flex flex-column align-items-start justify-content-around" id="contentAbout">
+                            <h3 class="aboutS">О школе</h3>
+                            <p class="textAbout">DSS – бесплатная образовательная программа, в которой готовят
+                                универсальных
+                                дизайнеров-практиков и дают возможность реально прокачаться.</p>
+                            <p class="textAbout">Обучаться может каждый, вне зависимости от возраста, места жительства
+                                или
+                                рода деятельности.
+                                Вашими менторами будут профессионалы
+                                своего дела – ведущие дизайнеры компании EPAM.</p>
+                            <div class="geomLine1">
+                                <p>~~~~~~</p>
+                            </div>
+                        </div>
+                        <div class="slider d-flex flex-column align-items-end">
+                            <div class="sliderHolder d-flex flex-column">
+                                <div class="slider_item fade-anim">
+                                    <img src="../img/slide1.png" style="max-width: 100%" class="bg_1" />
+                                </div>
+                                <div class="slider_item fade-anim">
+                                    <img src="../img/slide2.png" style="max-width: 100%" class="bg_2" />
+                                </div>
+                                <div class="slider_item fade-anim">
+                                    <img src="../img/slide3.png" style="max-width: 100%" class="bg_3" />
+                                </div>
+                            </div>
+                            <div class="sliderControls d-flex flex-row align-items-center justify-content-end">
+                                <a class="arrow" onclick="plusSlides(-1)">←</a>
+                                <div class="numberText" id="numberT"></div>
+                                <a class="arrow" onclick="plusSlides(1)">→</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center justify-content-center">
+                        <div class="triangCH d-flex justify-content-center">
+                            <div class="triangleC">
+                            </div>
+                        </div>
+                        <div style="width: 50%" id="triangCH">
+                        </div>
+                    </div>
+                    <div class="roundEmpty" id="roundA"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Third Page(Staff) section -->
+        <section id="staff">
+            <div class="container wrap-staff">
+                <div class="d-flex flex-column justify-content-around" id="row3">
+                    <h3 class="aboutS">Преподаватели</h3>
+                    <div class="teachers d-flex flex-row align-items-center justify-content-between" id="teach">
+                        <div class="pers d-flex flex-column">
+                            <div class="persH t_1 d-flex flex-column">
+                                <img src="../img/t1.png" style="max-width: 100%" />
+                            </div>
+                            <div class="nText d-flex flex-column align-items-start">
+                                <p class="nameT">Pavel Manulik</p>
+                                <p class="roleT">Куратор DSS, Senior Experience Designer</p>
+                            </div>
+                        </div>
+                        <div class="pers d-flex flex-column">
+                            <div class="persH t_2 d-flex flex-column">
+                                <img src="../img/t2.png" style="max-width: 100%" />
+                            </div>
+                            <div class="nText d-flex flex-column align-items-start">
+                                <p class="nameT">Kaim Shakalis</p>
+                                <p class="roleT">Senior Experience Designer</p>
+                            </div>
+                        </div>
+                        <div class="pers d-flex flex-column">
+                            <div class="persH t_3 d-flex flex-column">
+                                <img src="../img/t3.png" style="max-width: 100%" />
+                            </div>
+                            <div class="nText d-flex flex-column align-items-start">
+                                <p class="nameT">Pavel Dargel</p>
+                                <p class="roleT">Lead Experience Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="d-flex flex-column justify-content-around">
+                            <div class="teachers d-flex flex-row align-items-center justify-content-between" id="teach">
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_1 d-flex flex-column">
+                                        <img src="../img/t4.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Paola Manulik</p>
+                                        <p class="roleT">Специалист по продажам</p>
+                                    </div>
+                                </div>
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_2 d-flex flex-column">
+                                        <img src="../img/t5.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Pablo Manulitto</p>
+                                        <p class="roleT">Staff Manager</p>
+                                    </div>
+                                </div>
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_3 d-flex flex-column">
+                                        <img src="../img/t6.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Pavel Morghulik</p>
+                                        <p class="roleT">Эксперт по связям с общественностью</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="teachers d-flex flex-row align-items-center justify-content-between" id="teach">
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_1 d-flex flex-column">
+                                        <img src="../img/t7.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Pavella Manulique</p>
+                                        <p class="roleT">Куратор DSS France</p>
+                                    </div>
+                                </div>
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_2 d-flex flex-column">
+                                        <img src="../img/t8.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Pavel Himler</p>
+                                        <p class="roleT">Куратор DSS Germany</p>
+                                    </div>
+                                </div>
+                                <div class="pers d-flex flex-column">
+                                    <div class="persH t_3 d-flex flex-column">
+                                        <img src="../img/t9.png" style="max-width: 100%" />
+                                    </div>
+                                    <div class="nText d-flex flex-column align-items-start">
+                                        <p class="nameT">Pavlo Manul</p>
+                                        <p class="roleT">Куратор DSS Poland</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="allTLinkH d-flex aling-items-center justify-content-center">
+                        <a class="allTLink" data-toggle="collapse" data-target="#multiCollapseExample1" role="button"
+                            aria-expanded="false" aria-controls="multiCollapseExample1">Все преподаватели</a>
+                    </div>
+                </div>
+                <div id="zig1">
+                    <ul class="angles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li id="lastZig"></li>
+                    </ul>
+                </div>
+                <div class="fillSquare" id="sqLeft2"></div>
+                <div class="roundEmpty" id="roundB"></div>
+            </div>
+        </section>
+        <section class="chip" id="chip">
+            <div class="container wrap-chip">
+                <div class="chip-point">В чём фишка DSS?</div>
+                <div class="chip-point_1">
+                    <div class="chip-point_1_head">01. Доступно</div>
+                    <div class="chip-point_1_text">Подходит как начинающим, так и опытным и практикующим дизайнерам.
+                        Обучение не привязано к месту проживания или роду деятельности</div>
+                </div>
+                <div class="chip-point_2_case">
+                    <div class="chip-point_2">
+                        <div class="chip-point_2_head">02. Лампово</div>
+                        <div class="chip-point_2_text">Дружное, ламповое сообщество и понимающие преподаватели, с
+                            которыми можно не только посоветоваться, но и душевно поговорить :) </div>
+                    </div>
+                </div>
+                <div class="chip-point_3">
+                    <div class="chip-point_3_head">03. Бесплатно</div>
+                    <div class="chip-point_3_text">Обучение действительно бесплатное в режиме онлайн. Но для того, чтобы
+                        попасть в школу DSS, нужно выполнить тестовое задание</div>
+                </div>
+                <div class="chip-triangle">
+                    <div class="chip-triangle_"></div>
+                </div>
+            </div>
+        </section>
+        <section class="test" id="test">
+            <div class="container wrap-test">
+                <div class="test-block-1">
+                    <div class="section-head">Тестовое задание</div>
+                    <div class="test-block-1-text">
+                        <p>Чтобы стать участником DesignSpot School необходимо зарегистрироваться,
+                            а затем выполнить тестовое задание, которое покажет уровень Вашей мотивации и то, с чем
+                            предстоит иметь дело в дальнейшем.</p>
+                        <p>Чтобы зарегистрироваться, введите Ваше имя и email.</p>
+                        <p>Подача заявок осуществляется до 20 января 2021г.</p>
+                    </div>
+                </div>
+                <div class="test-block-2">
+                    <div class="test-block-2-head">Зарегистрируйтесь для отправки тестового задания</div>
+                    <div class="form">
+                        <form action="#">
+                            <div>
+                                <input type="text" name="username" value="" placeholder="Имя" />
+                            </div>
+                            <div>
+                                <input type="text" name="mail" value="" placeholder="Email" />
+                            </div>
+                            <div>
+                                <button type="submit">Зарегистрироваться</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="programm" id="programm">
+            <div class="container wrap-programm">
+                <div class="section-head">Программа</div>
+                <div class="tabs">
+                    <div class="tabs__body">
+                        <div id="tab_01" class="tabs__block tabs__block_show">
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">26 февраля – 3 марта</div>
+                                <div class="tabs__block-mini-text">Таблицы</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">4–10 марта</div>
+                                <div class="tabs__block-mini-text">Лендинги и визуальный дизайн</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">11–24 марта</div>
+                                <div class="tabs__block-mini-text">Адаптивный дизайн (responsive, breakpoints)</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">25 марта – 7 апреля</div>
+                                <div class="tabs__block-mini-text">Мобильные интерфейсы и дизайн-системы</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">8–14 апреля</div>
+                                <div class="tabs__block-mini-text">Дашборд и визуализация данных</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">15 апреля</div>
+                                <div class="tabs__block-mini-text">Разбор модуля с дашбордом</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">15 апреля – 1 мая</div>
+                                <div class="tabs__block-mini-text">Работа над ошибками, самостоятельная подготовка
+                                    портфолио
+                                    для его отправки и получения итогового сертификата</div>
+                            </div>
+                        </div>
+                        <div id="tab_02" class="tabs__block">
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">12–18 февраля</div>
+                                <div class="tabs__block-mini-text">Формы ввода данных, UI паттерны</div>
+                            </div>
+                        </div>
+                        <div id="tab_03" class="tabs__block">
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                            <div class="tabs__block-mini">
+                                <div class="tabs__block-mini-date">19–25 февраля</div>
+                                <div class="tabs__block-mini-text">User Flow</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__items">
+                        <a href="#tab_01" class="tabs__item tabs__item_active">I этап</a>
+                        <a href="#tab_02" class="tabs__item">II этап</a>
+                        <a href="#tab_03" class="tabs__item">III этап</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="review" id="review">
+            <div class="container wrap-review">
+                <div class="section-head">Отзывы</div>
+                <div class="slider-review">
+                    <div class="slider-review_item d-flex">
+                        <img src="img/jCsAVz-rrbY_photo-resizer.ru.jpg" class="bigpic" alt="">
+                        <div class="slider-review_item-content">
+                            <div class="d-flex slider-review_item-content-head align-items-center">
+                                <img src="img/miniMax.png" class="minipic" alt="">
+                                <div class="d-flex justify-content-between w-100 slider-review_item-content-head-block">
+                                    <div class="name">Мкмон</div>
+                                    <div class="">
+                                        <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="link"><i class="fa fa-facebook"></i></a>
+                                        <a href="#" class="link"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="slider-review_item-content-text">
+                                <div class="">
+                                    Если Вы спросите, как же поменять свою жизнь и заниматься тем, что вам нравится, то
+                                    я незамедлительно скажу DSS!
+                                    Это отличный источник знаний и навыков для развития Вашего внутреннего дизайнера.
+                                </div>
+                                <div class="">
+                                    Пришлось изучить много материала, усердно применять знания на практике, но поверьте,
+                                    это принесёт свои плоды.
+                                    На фотографии Вы можете увидеть меня уже после первого этапа DSS!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-review_item d-flex">
+                        <img src="img/RZ1isteKbWE_photo-resizer.ru.jpg" class="bigpic" alt="">
+                        <div class="slider-review_item-content">
+                            <div class="d-flex slider-review_item-content-head align-items-center">
+                                <img src="img/miniDima.png" class="minipic" alt="">
+                                <div class="d-flex justify-content-between w-100 slider-review_item-content-head-block">
+                                    <div class="name">Граф Чижовский</div>
+                                    <div class="">
+                                        <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="link"><i class="fa fa-facebook"></i></a>
+                                        <a href="#" class="link"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="slider-review_item-content-text">
+                                <div class="">
+                                    До подачи заявки в DSS я пытался сам изучить основы, но по началу мне это показалось
+                                    неинтересным.
+                                    Но после того, как со мной начали заниматься квалифицированные специалисты, я
+                                    осознал, что ошибался.
+                                </div>
+                                <div class="">
+                                    Благодаря преподавателям мои навыки в сфере дизайна возросли и я почувствовал мощь,
+                                    которая и не снилась моему куратору.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-review_item d-flex">
+                        <img src="img/uj_SZ3AI5Gg_photo-resizer.ru (1).jpg" class="bigpic" alt="">
+                        <div class="slider-review_item-content">
+                            <div class="d-flex slider-review_item-content-head align-items-center">
+                                <img src="img/miniAndrei.png" class="minipic" alt="">
+                                <div class="d-flex justify-content-between w-100 slider-review_item-content-head-block">
+                                    <div class="name">Леонардо Дай Водки</div>
+                                    <div class="">
+                                        <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="link"><i class="fa fa-facebook"></i></a>
+                                        <a href="#" class="link"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="slider-review_item-content-text">
+                                <div class="">
+                                    Однажды, куря сигаретку во время перерыва, я задумался. Неужели мне всю жизнь
+                                    придется работать в фастфуде, может попробовать себя в роли дизайнера?
+                                </div>
+                                <div class="">
+                                    И знаете что? Благодаря DSS я умело разукрашиваю ебальники. Хотя порой достается и
+                                    мне, но по факту, я доволен!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="carousel">
+            <div class="container wrap-carousel">
+                <div class="slider-carousel">
+                    <div class="slider-carousel_item">
+                        <img src="img/Adobe-Logo.png" class="pic-carousel" alt="">
+                    </div>
+                    <div class="slider-carousel_item">
+                        <img src="img/microsoft_PNG20.png" class="pic-carousel" alt="">
+                    </div>
+                    <div class="slider-carousel_item">
+                        <img src="img/google_PNG19631.png" class="pic-carousel" alt="">
+                    </div>
+                    <div class="slider-carousel_item">
+                        <img src="img/584817d6cef1014c0b5e4999.png" class="pic-carousel" alt="">
+                    </div>
+                    <div class="slider-carousel_item">
+                        <img src="img/Amazon-Web-Services-AWS-Logo-Transparent-PNG.png" class="pic-carousel" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq">
+            <div class="container pt-1">
+                <div class="d-flex flex-column justify-content-center align-items-center" id="row4">
+                    <h3 class="aboutS">Часто задаваемые вопросы</h3>
+                    <div class="accordion" style="width: 50%;" id="accordionFAQ">
+                        <div class="card">
+                            <div class="card-header" id="headingOne" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="cardHead d-flex flex-row align-items-center justify-content-between">
+                                    <p>Что такое DesignSpot School?</p>
+                                    <p class="plusQ">+</p>
+                                </div>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionFAQ">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <div class="cardHead d-flex flex-row align-items-center justify-content-between">
+                                    <p>Сколько стоит обучение?</p>
+                                    <p class="plusQ">+</p>
+                                </div>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionFAQ">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <div class="cardHead d-flex flex-row align-items-center justify-content-between">
+                                    <p>Обязательно проживать в Минске для участия?</p>
+                                    <p class="plusQ">+</p>
+                                </div>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionFAQ">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour" type="button" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <div class="cardHead d-flex flex-row align-items-center justify-content-between">
+                                    <p>Будет только UX?</p>
+                                    <p class="plusQ">+</p>
+                                </div>
+                            </div>
+
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordionFAQ">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive" type="button" data-toggle="collapse"
+                                data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                <div class="cardHead d-flex flex-row align-items-center justify-content-between">
+                                    <p>Какие материалы рекомендуете прочитать?</p>
+                                    <p class="plusQ">+</p>
+                                </div>
+                            </div>
+
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                data-parent="#accordionFAQ">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fillSquare" id="sqLeft3"></div>
+            </div>
+        </section>
+        <section class="step">
+            <div class="container wrap-step">
+                <div class="section-head">Сделай шаг навстречу дизайну!</div>
+                <div class="text">Для регистрации на 1 этап DSS укажите Ваше имя и email</div>
+                <div class="form">
+                    <form action="#">
+                        <div>
+                            <input type="text" name="username" value="" placeholder="Имя" />
+                        </div>
+                        <div>
+                            <input type="text" name="mail" value="" placeholder="Email" />
+                        </div>
+                        <div>
+                            <button type="submit">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="footer" id="footer">
+            <div class="container wrap-footer">
+                <div class="wrap-footer-сontent d-flex w-100 justify-content-between">
+                    <div class="wrap-footer-сontent-logo-1">
+                        <img src="img/image 18.png" alt="">
+                    </div>
+                    <div class="wrap-footer-сontent-logo-2">
+                        <img src="img/image 18 (2).png" alt="">
+                    </div>
+                    <div class="wrap-footer-сontent-b d-flex justify-content-between">
+                        <div class="wrap-footer-сontent-block">
+                            <div class="mb-2">Почта для связи</div>
+                            <div>info@dss.gmail.com</div>
+                        </div>
+                        <div class="wrap-footer-сontent-block">
+                            <div class="mb-2">Наши соцсети</div>
+                            <div class="d-flex">
+                                <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="link"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="link"><i class="fab fa-deviantart"></i></a>
+                                <a href="#" class="link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="wrap-footer-сontent-block">
+                            <div class="mb-2">Есть вопросы?</div>
+                            <div>
+                                <button type="submit" data-toggle="modal" data-target="#registrationModal">Задавайте
+                                    :)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">© 2020 DesignSpot School. Все права защищены</div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/script.min.js"></script>
+
+</body>
+
+</html>
