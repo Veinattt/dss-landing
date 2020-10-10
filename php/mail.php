@@ -1,25 +1,56 @@
-<meta http-equiv='refresh' content='3; url=https://veinattt.github.io/dss-landing/'>
-<meta charset="UTF-8" />
 <?php
 
-	if (isset($_POST['username']) && $_POST['username'] != "")//если существует атрибут NAME и он не пустой то создаем переменную для отправки сообщения
-		$name = $_POST['username'];
-	else die ("Не заполнено поле \"Имя\"");//если же атрибут пустой или не существует то завершаем выполнение скрипта и выдаем ошибку пользователю.
+$errors = '';
 
-	if (isset($_POST['mail']) && $_POST['mail'] != "") //тут все точно так же как и в предыдушем случае
-		$email = $_POST['mail'];
-	else die ("Не заполнено поле \"Email\"");
-	 
+$myemail = 'denmuraviov20@gmail.com'; //<—–Put Your email address here.  //
+if(empty($_POST['name'])
+
+empty($_POST['email']) ||
 
 
-	$address = "denmuraviov20@gmail.com";//адрес куда будет отсылаться сообщение для администратора
-	$mes  = "Имя: $name \n";	//в этих строчках мы заполняем текст сообщения. С помощью опрератора .= мы просто дополняем текст в переменную
-	$mes .= "E-mail: $mail \n";
-	$send = mail ($address,$mes,"Content-type:text/plain; charset = UTF-8\r\nFrom:$email");//собственно сам вызов функции отправки сообшения на сервере
+{
 
-	if ($send) //проверяем, отправилось ли сообщение
-		echo "Сообщение отправлено успешно! Перейти на <a href='https://veinattt.github.io/dss-landing/'>veinattt.github.io/dss-landing</a>, если вас не перенаправило вручную.";
-	else 
-		echo "Ошибка, сообщение не отправлено! Возможно, проблемы на сервере";
-		 
+$errors .= "\n Error: all fields are required";
+
+}
+
+$name = $_POST['name'];
+
+$email_address = $_POST['email'];
+
+
+if (!preg_match(
+
+"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $email_address))
+
+{
+
+$errors .= "\n Error: Invalid email address";
+
+}
+
+if( empty($errors))
+
+{
+
+$to = $myemail;
+
+$email_subject = "Contact form submission: $name";
+
+$email_body = "You have received a new message. ".
+
+" Here are the details:\n Name: $name \n ".
+
+"Email: $email_address\n";
+
+$headers = "From: $myemail\n";
+
+$headers .= "Reply-To: $email_address";
+
+mail($to,$email_subject,$email_body,$headers);
+
+
+
+}
+
 ?>
